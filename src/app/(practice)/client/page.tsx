@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function Page() {
     return (
         <Link href="/client/client2" passHref legacyBehavior>
-            {/* <LinkButton /> */}
+            <LinkButton>클라이언트2로 이동</LinkButton>
         </Link>
     );
 }

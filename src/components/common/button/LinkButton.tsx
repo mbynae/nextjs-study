@@ -1,13 +1,17 @@
+import { ForwardedRef, forwardRef } from 'react';
 import styles from './BackButton.module.css';
 
-type Props = {
-    href: string;
-};
+interface Props {
+    href?: string;
+    children: React.ReactNode;
+}
 
-export default function LinkButton({ href }: Props) {
+ const LinkButton = forwardRef<ForwardedRef<HTMLAnchorElement>, Props>({ href, children }, ref) => {
     return (
         <a href={href} className={styles.linkButton}>
-            링크 버튼
+            {children}
         </a>
     );
 }
+
+export default LinkButton;
