@@ -1,8 +1,10 @@
 import PokemonTypeFn from '@/func/pokemons/typeFn';
-import styles from '../pokemons.module.css';
-import type { POKEMON_TYPES } from '@/types/pokemon-type';
 import POKEMON_ENUM from '@/enums/pokemons';
+
 import Link from 'next/link';
+import styles from '../pokemons.module.css';
+
+import type { POKEMON_TYPES } from '@/types/pokemon-type';
 
 type Props = {
     params: {
