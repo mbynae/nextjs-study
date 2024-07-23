@@ -1,4 +1,4 @@
-export module TODOLIST_TYPE {
+export module TODOLIST_TYPES {
     export type UsetData = {
         id: number;
         name: string;
