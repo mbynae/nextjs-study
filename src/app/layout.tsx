@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
     //메타데이터Url은 반드시 배포용 Url로 적용
-    metadataBase: new URL('https://nextjs-study-fpo2.vercel.app?nocache=1'),
+    metadataBase: new URL('https://nextjs-study-fpo2.vercel.app'),
     title: 'Next.js 연습용 프로젝트',
     description: 'Next.js 공식문서 스터디 및 연습용 개인 프로젝트입니다.',
     icons: {
@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Next.js 연습용 프로젝트',
         description: 'Next.js 공식문서 스터디 및 연습용 개인 프로젝트입니다.',
+        // images: ['/YellowPaper.webp'],
         ...openGraphLocale,
     },
 };
-// images: ['/YellowPaper.webp'],
 
 //rootLayout.tsx
 //모든 페이지가 공유하는 최상위 레이아웃
