@@ -61,18 +61,19 @@ export default function RootLayout({
     );
 }
 
-//기본적으로 layout.js 는 서버 컴포넌트며, searchParams를 Props 받지 않음.
-//공유 레이아웃은 페이지를 이동해도 레이아웃 범위 하에 있다면 랜더링되지 않기 때문에 상태가 변할 수 있는 searchParams를 받지 않는다.
-//즉, 레이아웃을 공유하는 두 페이지간 이동 시 레이아웃은 랜더링되지 않고 children인 page UI만 랜더링 됨 (랜더링 최소화를 통해 성능 최적화)
+//동적 이미지 생서 (Dynamic Image Generation)
+//ImageResponse 생성자: JSX + CSS를 사용해 동적 이미지를 생성하게 해주는 기능
+//OpenGraph, TwitterCard 등의 소셜 미디어 이미지를 만드는데 사용된다.
 
-//레이아웃에서 클라이언트 기능을 사용해야 한다면(useSearchParams 같은) 클라이언트 컴포넌트로 만들어야 한다.
-//이 경우 페이지 이동 시 레이아웃도 같이 리랜더링됨
+//루트 세그먼트 내에 지정된 파일 이름으로 생성 시 자동 적용
+//app/route.tsx => 전역으로 일반 동적 이미지 생성
+//app/opengraph-image.tsx => 전역으로 오픈 그래프 이미지 생성
+//app/segment/[slug]/opengraph-image.tsx => 해당 루트 세그먼트에서 오픈 그래프 이미지 생성
+//app/twitter-image.tsx => 전역으로 트위터 카드 이미지 생성
+//app/icon.tsx => 파비콘을 동적으로 생성
+//파일은 컴포넌트가 new ImageResponse를 반환하는 형식으로 하며 컴포넌트는 반드시 export default 로 내보내야 한다.
 
-//루트 레이아웃
-//app 폴더에 반드시 포함되어야 함
-//루트 레이아웃에 <html>과 <body>가 반드시 정의되어야 하며, <title>, <meta> 같은 <head> 태그를 추가해선 안된다.
-//대신 Metadata Api를 사용해야 함
-
-//경로그룹 (root)폴더를 통해 여러 루트 레이아웃을 만들 수 있음
-//이 경우 페이지 이동 시 레이아웃 파일이 변경되기 때문에 전체 페이지 로드 발생
-//ex app/(shop)/layout.js => app/(marketing)/layout.js
+//반드시 Edge RunTime을 사용해야됨
+//적용할 수 있는 css 속성이 정해져있음
+//최대 번들 크기는 500kb 이하로 적용. 초과해야 할 시 런타임에서 호출해야 한다.
+//폰트는 되도록 ttf or otf 로 적용
