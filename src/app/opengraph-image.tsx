@@ -1,8 +1,9 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
+export const revalidate = 60;
 
-export default function GET() {
+export default function () {
     return new ImageResponse(
         (
             <div
