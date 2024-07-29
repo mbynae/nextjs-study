@@ -7,7 +7,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Pick<Props, 'params'>, parent: ResolvingMetadata): Promise<Metadata> {
-    const prevImage = (await parent).openGraph?.images || [];
+    // const prevImage = (await parent).openGraph?.images || [];
 
     return {
         title: `${params.slug}번 유저의 개인정보`,
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Pick<Props, 'params'>, parent
         openGraph: {
             title: `${params.slug}번 유저의 개인정보`,
             description: `jsonplaceholder 사이트의 예시 api를 활용한 데이터 호출 페이지입니다.`,
-            images: ['/nextjsIcon.png', ...prevImage],
+            // images: ['/nextjsIcon.png', ...prevImage],
             ...openGraphLocale,
         },
     };
