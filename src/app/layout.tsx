@@ -9,7 +9,7 @@ import { openGraphLocale } from '@/metadata/shared-metadata';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    metadataBase: new URL('http://localhost:3001'),
+    metadataBase: new URL('https://nextjs-study-tau-eight.vercel.app'),
     title: 'Next.js 연습용 프로젝트',
     description: 'Next.js 공식문서 스터디 및 연습용 개인 프로젝트입니다.',
     icons: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Next.js 연습용 프로젝트',
         description: 'Next.js 공식문서 스터디 및 연습용 개인 프로젝트입니다.',
-        images: ['YellowPaper.webp'],
+        images: ['/YellowPaper.webp'],
         ...openGraphLocale,
     },
 };
