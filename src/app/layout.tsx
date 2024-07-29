@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Next.js 연습용 프로젝트',
         description: 'Next.js 공식문서 스터디 및 연습용 개인 프로젝트입니다.',
-        images: ['/YellowPaper.webp'],
+        // images: ['/YellowPaper.webp'],
         ...openGraphLocale,
     },
 };
