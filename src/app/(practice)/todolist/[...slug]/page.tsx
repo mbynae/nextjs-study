@@ -15,7 +15,6 @@ export default async function TodoNumber({ params }: Props) {
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'user',
-        id: userdata[0]?.id,
         name: userdata[0]?.name,
         address: userdata[0]?.address.city,
         phone: userdata[0]?.phone,
