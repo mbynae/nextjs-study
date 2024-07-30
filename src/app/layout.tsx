@@ -63,19 +63,30 @@ export default function RootLayout({
     );
 }
 
-//동적 이미지 생서 (Dynamic Image Generation)
-//ImageResponse 생성자: JSX + CSS를 사용해 동적 이미지를 생성하게 해주는 기능
-//OpenGraph, TwitterCard 등의 소셜 미디어 이미지를 만드는데 사용된다.
+//Linked Data
+//웹 상에 존재하는 데이터를 개별 URI로 식별하고, 각 URI에 링크 정보를 부여함으로써 상호 연결된 웹을 지향하는 모형
+//메타 데이터는 데이터를 설명하는 데이터이고 광범위하고 쉽게 적용할 수 있는 대신 데이터간의 관계를 설명하지 못하는 단점이 존재함
+//링크드 데이터는 기계에게 데이터간의 관계도 설명할 수 있다는 장점이 존재하지만 HTML에 직접 입력해야 하며, 사용법이 좀 더 어렵다는 단점이 존재
 
-//루트 세그먼트 내에 지정된 파일 이름으로 생성 시 자동 적용
-//app/route.tsx => 전역으로 일반 동적 이미지 생성
-//app/opengraph-image.tsx => 전역으로 오픈 그래프 이미지 생성
-//app/segment/[slug]/opengraph-image.tsx => 해당 루트 세그먼트에서 오픈 그래프 이미지 생성
-//app/twitter-image.tsx => 전역으로 트위터 카드 이미지 생성
-//app/icon.tsx => 파비콘을 동적으로 생성
-//파일은 컴포넌트가 new ImageResponse를 반환하는 형식으로 하며 컴포넌트는 반드시 export default 로 내보내야 한다.
+//링크드 데이터의 4가지 원칙
+//- URI의 사용
+//- HTTP URI의 사용
+//- RDF의 사용
+//- 링크정보의 부여
 
-//반드시 Edge RunTime을 사용해야됨
-//적용할 수 있는 css 속성이 정해져있음
-//최대 번들 크기는 500kb 이하로 적용. 초과해야 할 시 런타임에서 호출해야 한다.
-//폰트는 되도록 ttf or otf 로 적용
+//JSON-LD
+//JSON을 사용해 링크드 데이터를 인코딩하는 방식
+//개발자가 읽고 쓰기 쉬운 JSON을 링크드데이터로 변환하기 위해 고안
+//HTML 안의 script 태그에 적용한다.
+//type: application/json+ld
+//리액트에선 dangerouslySetInnerHTML={{__html: JSON.stringify(jsonld)}} 속성을 사용해 json 데이터를 입력
+//next.js에서 layout.tsx, page.tsx 컴포넌트에서 script 태그로 구조화된 데이터를 랜더링하는 방식이 권장됨
+//Google의 Rich Results Test 페이지에서 테스트 가능
+
+//사용법
+//- "@context": JSON-LD의 컨텍스트를 정의. 사용되는 용어와 속성들의 의미를 지정하며, 주로 사용하는 어휘의 url을 지정한다.
+//- "https://schema.org": 컨텍스트가 schema.org 어휘를 사용한다는 것을 뜻함
+
+//- "@type": 설명하는 리소스의 유형을 지정. 즉, 객체가 어떤 종류의 타입인지를 정의함
+
+//- "@id": 리소스의 고유 식별자를 제공. 객체에 대한 전역적으로 고유한 식별자(url)를 지정함. 지정하게 된 후 다른 JSON-LD 문서에서 이 객체를 참조 가능
