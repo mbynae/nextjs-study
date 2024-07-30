@@ -11,16 +11,17 @@ type Props = {
 export default async function TodoNumber({ params }: Props) {
     const userdata = await fetchTodoUserList(params.slug);
 
+    console.log(userdata);
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'user',
         id: userdata[0]?.id,
         name: userdata[0]?.name,
-        address: userdata[0]?.address,
+        address: userdata[0]?.address.city,
         phone: userdata[0]?.phone,
         email: userdata[0]?.email,
         website: userdata[0]?.website,
-        company: userdata[0]?.company,
+        company: userdata[0]?.company.name,
     };
 
     return (
