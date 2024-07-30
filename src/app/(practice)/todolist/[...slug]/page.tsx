@@ -11,16 +11,22 @@ type Props = {
 export default async function TodoNumber({ params }: Props) {
     const userdata = await fetchTodoUserList(params.slug);
 
-    console.log(userdata);
     const jsonLd = {
         '@context': 'https://schema.org',
-        '@type': 'user',
+        '@type': 'Person',
+        '@id': `https://nextjs-study-fpo2.vercel.app/todolist/${userdata[0]?.id}`,
         name: userdata[0]?.name,
-        address: userdata[0]?.address.city,
-        phone: userdata[0]?.phone,
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: userdata[0]?.address.city,
+        },
+        telephone: userdata[0]?.phone,
         email: userdata[0]?.email,
-        website: userdata[0]?.website,
-        company: userdata[0]?.company.name,
+        url: userdata[0]?.website,
+        worksFor: {
+            '@type': 'Organization',
+            name: userdata[0]?.company.name,
+        },
     };
 
     return (
