@@ -30,7 +30,7 @@ export default async function TodoNumber({ params }: Props) {
     };
 
     return (
-        <>
+        <section>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <h4 className={styles.subTitle}>유저 데이터</h4>
             <div className={styles.subBox}>
@@ -49,7 +49,7 @@ export default async function TodoNumber({ params }: Props) {
                     </ul>
                 ))}
             </div>
-        </>
+        </section>
     );
 }
 
