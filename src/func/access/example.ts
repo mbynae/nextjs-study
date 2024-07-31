@@ -1,10 +1,6 @@
-import defineAbilityFor from './ability';
-import { Article } from './accessControl';
+import ability from './ability';
+import { Article } from './entities';
 
-const user = { id: 1, isModerator: true };
-const ability = defineAbilityFor(user);
-const ownArticle = new Article({ authorId: user.id });
-const anotherArticle = new Article({ authorId: 2 });
-
-const result = ability.can('update', anotherArticle, 'title');
-console.log(result);
+const result1 = ability.can('read', 'Comment');
+const result2 = ability.cannot('delete', 'User');
+console.log(result2);
