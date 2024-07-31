@@ -14,7 +14,6 @@ export default async function TodoNumber({ params }: Props) {
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'Person',
-        '@id': `https://nextjs-study-fpo2.vercel.app/todolist/${userdata[0]?.id}`,
         name: userdata[0]?.name,
         address: {
             '@type': 'PostalAddress',

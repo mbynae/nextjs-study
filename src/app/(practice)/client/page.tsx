@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useScreenView } from '@/hooks/useScreenView';
+import '../../../func/access/example';
 
 import styles from './client.module.css';
 
