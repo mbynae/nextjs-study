@@ -5,3 +5,4 @@ class Entity {
 }
 
 export class Article extends Entity {}
+export class Comment extends Entity {}
