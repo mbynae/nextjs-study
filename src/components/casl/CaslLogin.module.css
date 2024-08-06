@@ -1,0 +1,54 @@
+/* loginBox */
+.loginBox {
+    width: 600px;
+}
+.loginBox .loginTitle {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.container {
+    padding: 10px 10px;
+    border: 1px solid #e0dfdf;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.container .inputBox {
+    width: 80%;
+    display: flex;
+    gap: 10px;
+}
+.container .label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.container .label h5 {
+    word-break: keep-all;
+    font-size: 14px;
+}
+.container .label:has(.input:focus) h5 {
+    color: #8787ef;
+}
+.container .label .input {
+    border: 1px solid #959595;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.container .label .input:focus {
+    outline: 1px solid #8787ef;
+    color: #8787ef;
+    box-shadow: 0 0 10px 1px rgb(135, 135, 239, 0.4);
+}
+.container .label .input::placeholder {
+    font-size: 12px;
+    color: #666;
+    translate: 0 1px;
+}
+.loginBtn {
+    width: 12%;
+    padding: 0;
+    font-size: 12px;
+}

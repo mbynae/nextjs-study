@@ -49,6 +49,9 @@ export default function RootLayout({
                         <Link href="/serverAction">
                             <button className={styles.button}>서버액션 페이지</button>
                         </Link>
+                        <Link href="/casl">
+                            <button className={styles.button}>casl 페이지</button>
+                        </Link>
                         <Link href="/notRoute">
                             <button className={styles.button}>뒤로가기 페이지</button>
                         </Link>
