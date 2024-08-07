@@ -15,7 +15,7 @@ const ownComment = new Comment({ authorId: user.id });
 const anotherComment = new Comment({ authorId: 2 });
 
 const unsubscribe = ability.on('update', ({ rules, target }) => {
-    console.log(rules, target);
+    // console.log(rules, target);
 });
 
 ability.update([

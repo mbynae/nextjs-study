@@ -9,7 +9,7 @@ export default async function Todolist() {
             <article className={styles.article}>
                 <h4 className={styles.subTitle}>유저 선택</h4>
                 <div className={styles.buttonBox}>
-                    {numArr.map(num => (
+                    {numArr.map((num) => (
                         <Link key={num} href={`/todolist/${num}`}>
                             <button className={styles.button}> {num}</button>
                         </Link>
@@ -19,7 +19,7 @@ export default async function Todolist() {
             <article className={styles.article}>
                 <h4 className={styles.subTitle}>게시글 선택</h4>
                 <div className={styles.buttonBox}>
-                    {numArr.map(num => (
+                    {numArr.map((num) => (
                         <Link key={num} href={`/todolist/post?userId=${num}`}>
                             <button className={styles.button}> {num}</button>
                         </Link>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useScreenView } from '@/hooks/useScreenView';
 import '../../../func/access/example';

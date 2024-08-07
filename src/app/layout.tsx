@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import QueryClientProviders from '@/components/common/queryClient/QueryClientProviders';
 import { openGraphLocale } from '@/metadata/shared-metadata';
 
 import './globals.css';
@@ -57,9 +56,9 @@ export default function RootLayout({
                         </Link>
                     </nav>
                 </header>
-
                 <main>
-                    <QueryClientProviders>{children}</QueryClientProviders>
+                    {children}
+                    {/* <QueryClientProviders>{children}</QueryClientProviders> */}
                 </main>
             </body>
         </html>

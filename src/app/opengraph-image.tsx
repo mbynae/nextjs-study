@@ -57,6 +57,6 @@ export default function () {
         {
             width: 1200,
             height: 630,
-        }
+        },
     );
 }
