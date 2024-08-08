@@ -20,10 +20,15 @@ export const useInputHandler = <T extends string | object>(initialState: InputTy
         setState(value as typeof state);
     }; //text input 핸들러
 
-    const onReset = (value?: typeof state) => {
-        const update = value ?? initialState;
-        setState(update as typeof state);
-    }; //초기화
+    const onReset = (updater?: typeof state | ((e: typeof state) => typeof state)) => {
+        let resetState: typeof state;
+
+        if (typeof updater === 'undefined') resetState = initialState;
+        else if (typeof updater === 'function') resetState = updater(state);
+        else resetState = updater;
+
+        setState(resetState);
+    };
 
     return [state, onChange, onReset] as const;
 };

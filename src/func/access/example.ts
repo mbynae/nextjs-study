@@ -65,3 +65,35 @@ unsubscribe();
 
 //     throw error;
 // }
+
+// function createSetState<T>(initialValue: T) {
+//     let state = initialValue;
+
+//     const setState = (updater: T | ((state: T) => T)) => {
+//         if (typeof updater === 'function') {
+//             state = (updater as (state: T) => T)(state);
+//         } else {
+//             state = updater;
+//         }
+//         return state;
+//     };
+
+//     return setState;
+// }
+
+// function createSetState<T>(initialValue: T[]) {
+//     let state = initialValue;
+
+//     // updater는 각 요소와 그 인덱스를 받아 새로운 요소를 반환하는 함수
+//     const setState = (updater: (element: T, index: number) => T) => {
+//         state = state.map((element, index) => updater(element, index));
+//         return state;
+//     };
+
+//     return setState;
+// }
+
+// // 사용 예시
+// const setState = createSetState([1, 2, 3]);
+
+// console.log(setState((state) => state + 10));
