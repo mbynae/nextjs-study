@@ -48,6 +48,7 @@
     align-items: center;
     padding: 5px 0;
     border-bottom: 1px solid #eee;
+    font-size: 15px;
 }
 .userListBox .userList .userInfo .userOrder {
     display: inline-block;

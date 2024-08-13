@@ -1,10 +1,16 @@
-import CaslLogin from '@/components/casl/CaslLogin';
+import CaslLogin from '@/components/casl/login/CaslLogin';
+import CaslPostList from '@/components/casl/post/CaslPostList';
 import styles from './casl.module.css';
 
-export default function page() {
+interface Props {
+    searchParams: { page: string };
+}
+
+export default function page({ searchParams }: Props) {
     return (
         <div className={styles.container}>
             <CaslLogin />
+            <CaslPostList page={searchParams.page} />
         </div>
     );
 }

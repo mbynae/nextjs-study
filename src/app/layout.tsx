@@ -48,7 +48,7 @@ export default function RootLayout({
                         <Link href="/serverAction">
                             <button className={styles.button}>서버액션 페이지</button>
                         </Link>
-                        <Link href="/casl">
+                        <Link href="/casl?page=1">
                             <button className={styles.button}>casl 페이지</button>
                         </Link>
                         <Link href="/notRoute">
@@ -56,10 +56,7 @@ export default function RootLayout({
                         </Link>
                     </nav>
                 </header>
-                <main>
-                    {children}
-                    {/* <QueryClientProviders>{children}</QueryClientProviders> */}
-                </main>
+                <main>{children}</main>
             </body>
         </html>
     );

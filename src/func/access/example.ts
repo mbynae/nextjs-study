@@ -97,3 +97,9 @@ unsubscribe();
 // const setState = createSetState([1, 2, 3]);
 
 // console.log(setState((state) => state + 10));
+
+//알고리즘 - 배열/객체
+//객체는 접근, 입력, 삭제는 상수, 탐색은 n의 시간복잡도를 가짐
+//객체는 정렬되어 있지 않고 key와 value를 가짐
+//Object.keys, values, entries는 n의 시간복잡도
+//hasOwnProperty는 찾고자 하는 key의 존재 유무만 확인하기 때문에 상수의 시간복잡도

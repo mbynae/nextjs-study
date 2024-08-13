@@ -25,4 +25,9 @@ export module TODOLIST_TYPES {
         body: string;
         userId: number;
     };
+
+    export type UserLogin = {
+        isLoggedIn: boolean;
+        type: 'COMMON' | 'ADMIN';
+    };
 }

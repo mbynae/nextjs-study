@@ -103,6 +103,6 @@ export default ability;
 //admin일 시 모든 글 보기 / 삭제 가능
 //cannot을 통해 로그인이 되어있지 않으면 글쓰기 금지
 //because + ForbiddenError를 통해 글쓰기를 하려면 로그인 하라는 멘트 출력
-//로그아웃 시 비공개 글만 볼 수 있도록 ability update
+//로그아웃 시 공개 글만 볼 수 있도록 ability update
 //로그인 후 본인 프로필 클릭 시 post 페이지로 이동하도록 ability에 access 이벤트 추가 (AbilityBuilder 사용)
 //리다이렉트는 ability.on을 사용하고 언마운트 시 구독 제거 하도록 useEffect 사용 (custom Hooks로 ability.on 함수 제작)
