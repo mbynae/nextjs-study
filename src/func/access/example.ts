@@ -51,6 +51,17 @@ unsubscribe();
 // const ability = defineAbilityFor(user);
 // const ownArticle = new Article({ authorId: user.id });
 // const foreignArticle = new Article({ authorId: 3 });
+// 읽기: 모두 가능, 제목/내용 수정:아이디 일치만, 등록: 관리자만
+// const admin = { id: 1, isLoggedIn: true, admin: true };
+// const user = { id: 2, isLoggedIn: true, admin: false };
+// const ability = defineAbilityFor(user);
+// const ownArticle = new Article({ authorId: user.id });
+// const foreignArticle = new Article({ authorId: 3 });
+
+// const user = { id: 1, isLoggedIn: true, admin: false };
+// const ability = defineAbilityFor(user);
+// const article = new Article({ published: true });
+// const comment = new Comment();
 
 // 읽기: id가 일치할 시 가능, private가 true면 불가, 불가 시 에러 메세지 출력
 // const user = { id: 1, isLoggedIn: true, admin: false };

@@ -48,10 +48,15 @@ export const useBooleanHandler = <T extends boolean | object>(initialState: Bool
         setState((prev) => !prev as typeof state);
     }; //토글 이벤트 핸들러
 
-    const onReset = (value?: typeof state) => {
-        const update = value ?? initialState;
-        setState(update as typeof state);
-    }; //초기화
+    const onReset = (updater?: typeof state | ((e: typeof state) => typeof state)) => {
+        let resetState: typeof state;
+
+        if (typeof updater === 'undefined') resetState = initialState;
+        else if (typeof updater === 'function') resetState = updater(state);
+        else resetState = updater;
+
+        setState(resetState);
+    };
 
     return [state, onChange, onReset] as const;
 };

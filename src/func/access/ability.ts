@@ -41,6 +41,16 @@ const ability = (user: any) =>
 //     });
 
 // const ability = (user: User) =>
+//     defineAbility((can) => {
+//         can('read', 'Article');
+//         can('update', 'Article', ['title', 'description'], { authorId: user.id });
+
+//         if (user.admin) {
+//             can('update', 'Article', ['published']);
+//         }
+//     });
+
+// const ability = (user: User) =>
 //     defineAbility((can, cannot) => {
 //         cannot('read', 'all', { private: true }).because('비공개 게시물은 열람할 수 없습니다.');
 //         can('read', 'all', { authorId: user.id });
