@@ -32,6 +32,6 @@ export function generateStaticParams({ params }: Params) {
     const typeArr = Object.keys(POKEMON_ENUM.typeKorName) as POKEMON_TYPES.TypeList[];
 
     let types = [] as { type: POKEMON_TYPES.TypeList; subType: POKEMON_TYPES.TypeList }[];
-    typeArr.forEach(type => typeArr.forEach(subType => type !== subType && types.push({ type: type, subType: subType })));
+    typeArr.forEach((type) => typeArr.forEach((subType) => type !== subType && types.push({ type: type, subType: subType })));
     return types;
 }

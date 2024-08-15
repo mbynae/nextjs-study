@@ -1,7 +1,7 @@
 import { create } from 'zustand';
-import type { CASL_TYPES } from '@/types/casl-type';
+import { persist } from 'zustand/middleware';
 
-const userData = localStorage.getItem('userData');
+import type { CASL_TYPES } from '@/types/casl-type';
 
 export const caslLoginInit = {
     number: 0,
@@ -12,7 +12,15 @@ export const caslLoginInit = {
     email: '',
 };
 
-export const useCaslLoginData = create<CASL_TYPES.LoginStore>((set) => ({
-    ...(userData ? JSON.parse(userData) : caslLoginInit),
-    dataInput: (data) => set(data),
-}));
+export const useCaslLoginData = create<CASL_TYPES.LoginStore>()(
+    persist(
+        (set, get) => ({
+            ...caslLoginInit,
+            dataInput: (data) => set(data),
+            logout: () => set({ ...caslLoginInit }),
+        }),
+        {
+            name: 'userData',
+        },
+    ),
+);

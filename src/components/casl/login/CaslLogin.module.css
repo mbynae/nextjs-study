@@ -51,12 +51,12 @@
     translate: 0 1px;
 }
 .loginBtn {
-    width: 12%;
-    padding: 0;
+    padding: 5px 10px;
     font-size: 12px;
 }
 
 .loading {
+    /* width: 100%; */
     width: 88%;
     display: flex;
     justify-content: center;

@@ -1,6 +1,6 @@
 'use client';
 
-import { caslLoginInit, useCaslLoginData } from '@/store/casl/loginStore';
+import { useCaslLoginData } from '@/store/casl/loginStore';
 import { compose } from '@/func/common/compose';
 
 import SquareBtn from '@/components/common/button/SquareBtn';
@@ -15,15 +15,10 @@ const CaslProfile = ({ resetValue }: Props) => {
     const id = useCaslLoginData((state) => state.id);
     const name = useCaslLoginData((state) => state.name);
     const type = useCaslLoginData((state) => state.type);
-    // const reset = useCaslLoginData.getInitialState();
 
     //event handler
-    const dataInput = useCaslLoginData((state) => state.dataInput);
-
-    const logoutHandler = () => {
-        localStorage.removeItem('userData');
-        compose(resetValue, dataInput)(caslLoginInit);
-    };
+    const logout = useCaslLoginData((state) => state.logout);
+    const logoutHandler = compose(resetValue, logout);
 
     return (
         <div className={styles.profileContainer}>
@@ -34,7 +29,7 @@ const CaslProfile = ({ resetValue }: Props) => {
                 <span>/</span>
                 <span>type: {type}</span>
             </div>
-            <SquareBtn type="button" onClick={logoutHandler} className={styles.logoutBtn}>
+            <SquareBtn type="button" onClick={() => logoutHandler()} className={styles.loginBtn}>
                 로그아웃
             </SquareBtn>
         </div>

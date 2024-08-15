@@ -14,7 +14,7 @@ type Props = {
 
 //type에 대한 params만 생성
 export default function PokemonType({ params }: Props) {
-    const typeList = Object.keys(POKEMON_ENUM.typeKorName).filter(type => params.type !== type);
+    const typeList = Object.keys(POKEMON_ENUM.typeKorName).filter((type) => params.type !== type);
     const typeName = PokemonTypeFn.nameKorChange(params.type);
 
     return (
@@ -23,7 +23,7 @@ export default function PokemonType({ params }: Props) {
             <div>
                 <p className={styles.paragraph}>＊서브 타입 선택</p>
                 <div className={styles.buttonBox}>
-                    {typeList.map(type => (
+                    {typeList.map((type) => (
                         <Link key={type} href={`/pokemons/${params.type}/${type}`}>
                             <button className={styles.button}>{type}</button>
                         </Link>
@@ -36,6 +36,6 @@ export default function PokemonType({ params }: Props) {
 
 export const dynamicParams = false;
 export function generateStaticParams() {
-    const types = Object.keys(POKEMON_ENUM.typeKorName).map(e => ({ type: e }));
+    const types = Object.keys(POKEMON_ENUM.typeKorName).map((e) => ({ type: e }));
     return types;
 }

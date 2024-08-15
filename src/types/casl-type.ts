@@ -8,5 +8,5 @@ export module CASL_TYPES {
         email: string;
     };
 
-    export type LoginStore = { dataInput: (data: UserData) => void } & UserData;
+    export type LoginStore = { dataInput: (data: UserData) => void; logout: () => void } & UserData;
 }

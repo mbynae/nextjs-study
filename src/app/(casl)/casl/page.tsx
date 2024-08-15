@@ -6,7 +6,7 @@ interface Props {
     searchParams: { page: string };
 }
 
-export default function page({ searchParams }: Props) {
+export default function CaslPage({ searchParams }: Props) {
     return (
         <div className={styles.container}>
             <CaslLogin />
