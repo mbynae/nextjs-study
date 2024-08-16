@@ -108,15 +108,3 @@ unsubscribe();
 // const setState = createSetState([1, 2, 3]);
 
 // console.log(setState((state) => state + 10));
-
-//알고리즘 - 배열/객체
-//객체는 접근, 입력, 삭제는 상수, 탐색은 n의 시간복잡도를 가짐
-//객체는 정렬되어 있지 않고 key와 value를 가짐
-//Object.keys, values, entries는 n의 시간복잡도
-//hasOwnProperty는 찾고자 하는 key의 존재 유무만 확인하기 때문에 상수의 시간복잡도
-
-//알고리즘 - 배열
-//배열은 정렬되어 있다. 다만 성능이 조금 떨어질 수 있음
-//접근은 상수, 검색은 n, 입력/삭제는 길이와 순서에 의존
-//입력/삭제는 끝에서 하면 상수, 앞에서 하면 n이 된다. (순서를 재지정해야 하기 때문)
-//그래서 push/pop이 shift/unshift 보다 빠름
