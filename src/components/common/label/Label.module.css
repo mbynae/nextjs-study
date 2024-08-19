@@ -1,0 +1,15 @@
+.label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.text {
+    word-break: keep-all;
+    font-size: 14px;
+}
+
+.label.focus:has(input:focus) .text {
+    color: #8787ef;
+}

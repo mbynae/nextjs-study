@@ -1,0 +1,35 @@
+.table {
+    width: 100%;
+}
+.tableHeader {
+    width: 100%;
+    display: flex;
+}
+.headerCell {
+    font-weight: 700;
+    font-size: 14px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #000;
+    border-bottom: 1px solid #cdcdcd;
+    flex: 1;
+}
+.tableBody {
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+}
+.tableBody:hover {
+    background-color: #f5f5f5;
+}
+.bodyCell {
+    font-size: 13px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #cdcdcd;
+    flex: 1;
+}

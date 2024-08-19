@@ -1,3 +1,5 @@
+import { HasHydrated } from './common-type';
+
 export module CASL_TYPES {
     export type UserData = {
         number: number;
@@ -8,5 +10,11 @@ export module CASL_TYPES {
         email: string;
     };
 
-    export type LoginStore = { dataInput: (data: UserData) => void; logout: () => void } & UserData;
+    export type UserDataInput = {
+        allGetState: () => UserData;
+        dataInput: (data: UserData) => void;
+        logout: () => void;
+    };
+
+    export type LoginStore = UserData & UserDataInput & HasHydrated;
 }

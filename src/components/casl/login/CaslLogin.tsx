@@ -1,6 +1,6 @@
 'use client';
 
-import { CSSProperties, useEffect, useLayoutEffect, useRef, useState, useTransition } from 'react';
+import { CSSProperties, useTransition } from 'react';
 import { useCaslLoginData } from '@/store/casl/loginStore';
 import { useInputHandler } from '@/hooks/useEventHandler';
 import { caslLogin } from '@/func/serverAction/caslServerAction';
@@ -13,7 +13,7 @@ import type { CASL_TYPES } from '@/types/casl-type';
 
 const CaslLogin = () => {
     //state
-    const [hydrate, setHydrate] = useState(false);
+    const hydrate = useCaslLoginData((state) => state._hasHydrated);
     const [value, onValueInput, resetValue] = useInputHandler({ id: '', password: '' });
     const isLoggedIn = useCaslLoginData((state) => state.isLoggedIn);
 
@@ -40,10 +40,6 @@ const CaslLogin = () => {
             }
         });
     };
-
-    useEffect(() => {
-        setHydrate(true);
-    }, []);
 
     //data Processing
     const loadingStyle: CSSProperties | undefined = isPending ? { backgroundColor: '#eee', pointerEvents: 'none' } : undefined;
