@@ -4,6 +4,8 @@ import ClientC from '@/components/sc/ClientC';
 export default function ServerAction() {
     async function serverActionFn() {
         'use server';
+        // const id = formData.get('example');
+        // console.log(id);
         const result = await fetchTodoUserList('2');
         return result;
     }

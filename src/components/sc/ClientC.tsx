@@ -1,18 +1,28 @@
 'use client';
 
+import { useActionState } from 'react';
 import { serverActionTodoUser } from '@/func/serverAction/serverActionExample';
+
+import TextInput from '../common/textInput/TextInput';
+import SquareBtn from '../common/button/SquareBtn';
 import styles from './ClientC.module.css';
 
+import type { TODOLIST_TYPES } from '@/api/type/todoType';
+
 type Props = {
-    onClick: () => void;
+    onClick: () => Promise<TODOLIST_TYPES.UsetData[]>;
 };
 
 const ClientC = ({ onClick }: Props) => {
+    const [state, action, ispending] = useActionState(serverActionTodoUser, null);
+
     return (
-        // <button onClick={() => onClick()} className={styles.button}>
-        <button onClick={() => serverActionTodoUser('3')} className={styles.button}>
-            서버 액션 버튼
-        </button>
+        <form action={action} className={styles.form}>
+            <TextInput name="userId" disabled={ispending} />
+            <SquareBtn className={styles.button} disabled={ispending}>
+                제출
+            </SquareBtn>
+        </form>
     );
 };
 
