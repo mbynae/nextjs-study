@@ -1,10 +1,37 @@
 .form {
     width: 250px;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: center; */
+    gap: 5px;
+    position: relative;
+}
+
+.group {
+    display: flex;
     align-items: center;
     gap: 10px;
 }
 .button {
     word-break: keep-all;
     padding-inline: 20px;
+}
+
+.defaultState {
+    display: block;
+    width: 100%;
+    padding-left: 5px;
+    font-size: 14px;
+    color: rgb(210, 62, 62);
+    position: absolute;
+    left: 0;
+    top: 0;
+    translate: 0 -100%;
+}
+
+.inceeaseGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
